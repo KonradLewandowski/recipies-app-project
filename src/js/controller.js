@@ -1,12 +1,16 @@
-import { state, loadRecipe, loadSearchResults } from './model';
+import {
+  state,
+  loadRecipe,
+  loadSearchResults,
+  getSearchResultsPage,
+} from './model';
 import RecipeView from './views/recipe-view';
 import SearchView from './views/search-view';
 import ResultsView from './views/results-view';
+import PaginationView from './views/pagination-view';
 
 import 'core-js/stable'; //polyfil everything
 import 'regenerator-runtime/runtime'; //polyfil async await
-import recipeView from './views/recipe-view';
-import resultsView from './views/results-view';
 
 //parcel module reload
 if (module.hot) {
@@ -27,7 +31,7 @@ const controlRecipes = async () => {
     // 2 rendering recipe
     RecipeView.render(state.recipe);
   } catch (error) {
-    recipeView.renderError();
+    RecipeView.renderError();
   }
 };
 
@@ -42,15 +46,26 @@ const controlSearchResults = async () => {
     await loadSearchResults(query);
 
     //3 render results
+    ResultsView.render(getSearchResultsPage());
 
-    resultsView.render(state.search.results);
+    //4 render pagination buttons
+    PaginationView.render(state.search);
   } catch (error) {
     console.log(error);
   }
 };
 
+const controlPagination = goToPage => {
+  //1 render NEW results
+  ResultsView.render(getSearchResultsPage(goToPage));
+
+  //2 render NEW pagination buttons
+  PaginationView.render(state.search);
+};
+
 const init = () => {
   RecipeView.addHandlerRender(controlRecipes);
   SearchView.addHandlerSearch(controlSearchResults);
+  PaginationView.addHandlerClick(controlPagination);
 };
 init();

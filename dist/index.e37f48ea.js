@@ -1958,7 +1958,8 @@ var _view = require("./view");
 var _viewDefault = parcelHelpers.interopDefault(_view);
 var _iconsSvg = require("url:../../img/icons.svg"); //Parcel icons
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
-var _fractional = require("fractional");
+// import { Fraction } from 'fractional';
+const Fraction = require("fractional");
 class RecipeView extends (0, _viewDefault.default) {
     _parentElement = document.querySelector(".recipe");
     _errorMessage = "We could not find the recipe";
@@ -2048,7 +2049,7 @@ class RecipeView extends (0, _viewDefault.default) {
       <svg class="recipe__icon">
         <use href="${0, _iconsSvgDefault.default}#icon-check"></use>
       </svg>
-      <div class="recipe__quantity">${ingredient.quantity ? new (0, _fractional.Fraction)(ingredient.quantity).toString() : ""}</div>
+      <div class="recipe__quantity">${ingredient.quantity ? new Fraction(ingredient.quantity).toString() : ""}</div>
       <div class="recipe__description">
         <span class="recipe__unit">${ingredient.unit}</span>
         ${ingredient.description}
@@ -2058,7 +2059,7 @@ class RecipeView extends (0, _viewDefault.default) {
 }
 exports.default = new RecipeView();
 
-},{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","fractional":"3SU56","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bWlJ9":[function(require,module,exports) {
+},{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","fractional":"3SU56"}],"bWlJ9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _iconsSvg = require("url:../../img/icons.svg"); //Parcel icons

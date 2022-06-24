@@ -3,9 +3,11 @@ const express = require('express');
 
 const app = express();
 
-console.log(__dirname);
+const buildPath = path.join(__dirname, 'dist');
+app.use(express.static(buildPath));
 
-// app.use(express.static("./"));
-app.use(express.static(`${__dirname}/dist`));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
 
 module.exports = app;

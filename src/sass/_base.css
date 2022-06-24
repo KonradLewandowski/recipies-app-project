@@ -24,7 +24,9 @@ body {
 }
 
 .container {
+  margin: 0 auto;
   padding: 10px 10px 0 10px;
+  max-width: 1440px;
   background-color: #fff;
   overflow: hidden;
 }
@@ -37,12 +39,12 @@ body {
 
 .container_main {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 20px;
 }
 
 @media only screen and (max-width: 31.25em) {
   .container_main {
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
   }
 }

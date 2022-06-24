@@ -4,22 +4,19 @@
   "description": "Recipe application",
   "default": "index.html",
   "scripts": {
-    "start": "node server.js",
-    "start:dev": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --no-scope-hoist --dist-dir ./dist"
   },
   "author": "Konrad Lewandowski",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.2",
+    "fractional": "^1.0.0",
     "parcel": "^2.0.0-beta.1",
     "sass": "^1.26.10"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "fractional": "^1.0.0",
     "regenerator-runtime": "^0.13.7"
   }
 }

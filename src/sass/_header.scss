@@ -1,28 +1,31 @@
 .header {
   grid-area: head;
-  background-color: $color-grey-light-1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: $bp-smallest) {
+    gap: 20px;
+  }
 
   &__logo {
-    margin-left: 4rem;
+    // margin-left: 4rem;
     height: 4.6rem;
-    display: block;
   }
 }
 
 .search {
-  background-color: #fff;
-  border-radius: 10rem;
+  background-color: rgb(90, 86, 86);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-left: 3rem;
   transition: all 0.3s;
 
   &:focus-within {
     transform: translateY(-2px);
-    box-shadow: 0 0.7rem 3rem rgba($color-grey-dark-1, 0.08);
   }
 
   &__field {
@@ -41,13 +44,13 @@
       color: $color-grey-light-3;
     }
 
-    @media only screen and (max-width: $bp-medium) {
-      width: auto;
+    // @media only screen and (max-width: $bp-medium) {
+    //   width: auto;
 
-      &::placeholder {
-        color: white;
-      }
-    }
+    //   &::placeholder {
+    //     color: white;
+    //   }
+    // }
   }
 
   &__btn {
@@ -57,7 +60,8 @@
 }
 
 .nav {
-  align-self: stretch;
+  // align-self: stretch;
+  // justify-self: flex-end;
   margin-right: 2.5rem;
 
   &__list {

@@ -13,9 +13,9 @@ import 'core-js/stable'; //polyfil everything
 import 'regenerator-runtime/runtime'; //polyfil async await
 
 //parcel module reload
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 const controlRecipes = async () => {
   try {

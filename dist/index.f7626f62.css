@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-*, :before, :after {
-  box-sizing: inherit;
-}
-
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -14,7 +10,7 @@ html {
 
 @media only screen and (max-width: 61.25em) {
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 }
 
@@ -30,24 +26,25 @@ body {
 }
 
 .container {
-  max-width: 120rem;
-  min-height: 117rem;
   background-color: #fff;
-  border-radius: 9px;
-  grid-template: "head head" 10rem
-                 "list recipe" minmax(100rem, auto)
-                 / 1fr 2fr;
-  margin: 4vw auto;
-  display: grid;
+  padding: 10px 10px 0;
   overflow: hidden;
-  box-shadow: 0 2rem 6rem .5rem #61555133;
 }
 
 @media only screen and (max-width: 78.15em) {
   .container {
     max-width: 100%;
-    border-radius: 0;
-    margin: 0;
+  }
+}
+
+.container_main {
+  justify-content: space-around;
+  display: flex;
+}
+
+@media only screen and (max-width: 31.25em) {
+  .container_main {
+    flex-wrap: wrap;
   }
 }
 
@@ -251,22 +248,26 @@ body {
 }
 
 .header {
-  background-color: #f9f5f3;
+  flex-flow: wrap;
   grid-area: head;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   display: flex;
 }
 
+@media only screen and (max-width: 31.25em) {
+  .header {
+    gap: 20px;
+  }
+}
+
 .header__logo {
   height: 4.6rem;
-  margin-left: 4rem;
-  display: block;
 }
 
 .search {
-  background-color: #fff;
-  border-radius: 10rem;
+  background-color: #5a5656;
+  justify-content: space-between;
   align-items: center;
   padding-left: 3rem;
   transition: all .3s;
@@ -275,7 +276,6 @@ body {
 
 .search:focus-within {
   transform: translateY(-2px);
-  box-shadow: 0 .7rem 3rem #61555114;
 }
 
 .search__field {
@@ -295,23 +295,12 @@ body {
   color: #d3c7c3;
 }
 
-@media only screen and (max-width: 61.25em) {
-  .search__field {
-    width: auto;
-  }
-
-  .search__field::placeholder {
-    color: #fff;
-  }
-}
-
 .search__btn {
   font-family: inherit;
   font-weight: 600;
 }
 
 .nav {
-  align-self: stretch;
   margin-right: 2.5rem;
 }
 
@@ -486,7 +475,6 @@ body {
 }
 
 .search-results {
-  flex-direction: column;
   padding: 3rem 0;
   display: flex;
 }
@@ -557,11 +545,11 @@ body {
 
 .recipe__title {
   color: #fff;
+  font-weight: 700;
+  font-size: clam(10px, 20px, 30px);
   text-transform: uppercase;
   width: 50%;
   text-align: center;
-  font-size: 3.25rem;
-  font-weight: 700;
   line-height: 1.95;
   position: absolute;
   bottom: 0;
@@ -576,14 +564,8 @@ body {
   padding: 1.3rem 2rem;
 }
 
-@media only screen and (max-width: 61.25em) {
-  .recipe__title {
-    width: 70%;
-  }
-}
-
 .recipe__details {
-  align-items: center;
+  flex-flow: wrap;
   padding: 7.5rem 8rem 3.5rem;
   display: flex;
 }

@@ -546,7 +546,9 @@ var _paginationView = require("./views/pagination-view");
 var _paginationViewDefault = parcelHelpers.interopDefault(_paginationView);
 var _runtime = require("regenerator-runtime/runtime"); //polyfil async await
 //parcel module reload
-if (module.hot) module.hot.accept();
+// if (module.hot) {
+//   module.hot.accept();
+// }
 const controlRecipes = async ()=>{
     try {
         const id = window.location.hash.slice(1);

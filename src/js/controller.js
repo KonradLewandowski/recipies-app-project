@@ -9,8 +9,8 @@ import SearchView from './views/search-view';
 import ResultsView from './views/results-view';
 import PaginationView from './views/pagination-view';
 
-// import 'core-js/stable'; //polyfil everything
-// import 'regenerator-runtime/runtime'; //polyfil async await
+import 'core-js/stable'; //polyfil everything
+import 'regenerator-runtime/runtime'; //polyfil async await
 
 //parcel module reload
 // if (module.hot) {

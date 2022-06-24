@@ -17,11 +17,6 @@
       position: absolute;
       top: 0;
       left: 0;
-      background-image: linear-gradient(
-        to right bottom,
-        $color-grad-1,
-        $color-grad-2
-      );
       opacity: 0.6;
     }
   }
@@ -41,7 +36,7 @@
     color: #fff;
     font-weight: 700;
     // font-size: 3.25rem;
-    font-size: clam(10px, 20px, 30px);
+    font-size: clamp(3rem, 3.25rem, 3.5rem);
     text-transform: uppercase;
     width: 50%;
     line-height: 1.95;
@@ -57,10 +52,6 @@
         $color-grad-2
       );
     }
-
-    // @media only screen and (max-width: $bp-medium) {
-    //   width: 70%;
-    // }
   }
 
   ///////////
@@ -125,7 +116,7 @@
   // INGREDIENTS
   &__ingredients {
     padding: 5rem 8rem;
-    font-size: 1.6rem;
+    font-size: clamp(1.5rem, 2rem, 2.5rem);
     line-height: 1.4;
     background-color: $color-grey-light-2;
     display: flex;

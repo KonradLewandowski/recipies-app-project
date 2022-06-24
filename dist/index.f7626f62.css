@@ -15,9 +15,7 @@ html {
 }
 
 body {
-  color: #615551;
   min-height: calc(100vh - 8vw);
-  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Nunito Sans, sans-serif;
@@ -39,6 +37,7 @@ body {
 
 .container_main {
   justify-content: space-around;
+  padding-top: 20px;
   display: flex;
 }
 
@@ -52,9 +51,8 @@ body {
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
-  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+  background-image: linear-gradient(to bottom right, #fb6ce1, #ffcbdf);
   border: none;
-  border-radius: 10rem;
   align-items: center;
   transition: all .2s;
   display: flex;
@@ -98,7 +96,7 @@ body {
 }
 
 .btn--inline {
-  color: #f38e82;
+  color: #d125d7;
   cursor: pointer;
   background-color: #f9f5f3;
   border: none;
@@ -123,7 +121,7 @@ body {
 }
 
 .btn--inline:hover {
-  color: #f48982;
+  color: #ffcbdf;
   background-color: #f2efee;
 }
 
@@ -135,7 +133,7 @@ body {
   cursor: pointer;
   height: 4.5rem;
   width: 4.5rem;
-  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+  background-image: linear-gradient(to bottom right, #fb6ce1, #ffcbdf);
   border: none;
   border-radius: 50%;
   justify-content: center;
@@ -169,7 +167,7 @@ body {
 .btn--tiny svg {
   height: 100%;
   width: 100%;
-  fill: #f38e82;
+  fill: #d125d7;
   transition: all .3s;
 }
 
@@ -178,12 +176,12 @@ body {
 }
 
 .btn--tiny:hover svg {
-  fill: #f48982;
+  fill: #ffcbdf;
   transform: translateY(-1px);
 }
 
 .btn--tiny:active svg {
-  fill: #f48982;
+  fill: #ffcbdf;
   transform: translateY(0);
 }
 
@@ -192,7 +190,7 @@ body {
 }
 
 .heading--2 {
-  color: #f38e82;
+  color: #d125d7;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 2.5rem;
@@ -212,7 +210,7 @@ body {
 .spinner svg {
   height: 6rem;
   width: 6rem;
-  fill: #f38e82;
+  fill: #d125d7;
   animation: rotate 2s linear infinite;
 }
 
@@ -236,7 +234,7 @@ body {
 .message svg, .error svg {
   height: 3rem;
   width: 3rem;
-  fill: #f38e82;
+  fill: #d125d7;
   transform: translateY(-.3rem);
 }
 
@@ -266,7 +264,7 @@ body {
 }
 
 .search {
-  background-color: #5a5656;
+  background-color: #fc9bd1;
   justify-content: space-between;
   align-items: center;
   padding-left: 3rem;
@@ -292,7 +290,7 @@ body {
 }
 
 .search__field::placeholder {
-  color: #d3c7c3;
+  color: #f22cd4;
 }
 
 .search__btn {
@@ -333,7 +331,7 @@ body {
 .nav__btn svg {
   height: 2.4rem;
   width: 2.4rem;
-  fill: #f38e82;
+  fill: #d125d7;
   margin-right: .7rem;
   transform: translateY(-1px);
 }
@@ -414,7 +412,7 @@ body {
   height: 100%;
   width: 100%;
   opacity: .4;
-  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+  background-image: linear-gradient(to bottom right, #fb6ce1, #ffcbdf);
   display: block;
   position: absolute;
   top: 0;
@@ -438,7 +436,7 @@ body {
 }
 
 .preview__title {
-  color: #f38e82;
+  color: #d125d7;
   text-transform: uppercase;
   text-overflow: ellipsis;
   max-width: 25rem;
@@ -471,10 +469,11 @@ body {
 .preview__user-generated svg {
   height: 1.2rem;
   width: 1.2rem;
-  fill: #f38e82;
+  fill: #d125d7;
 }
 
 .search-results {
+  min-width: 300px;
   padding: 3rem 0;
   display: flex;
 }
@@ -503,17 +502,6 @@ body {
   float: right;
 }
 
-.copyright {
-  color: #918581;
-  margin-top: 4rem;
-  padding: 0 3.5rem;
-  font-size: 1.2rem;
-}
-
-.copyright .twitter-link:link, .copyright .twitter-link:visited {
-  color: #918581;
-}
-
 .recipe {
   background-color: #f9f5f3;
 }
@@ -529,7 +517,6 @@ body {
   height: 100%;
   width: 100%;
   opacity: .6;
-  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   display: block;
   position: absolute;
   top: 0;
@@ -545,11 +532,11 @@ body {
 
 .recipe__title {
   color: #fff;
-  font-weight: 700;
-  font-size: clam(10px, 20px, 30px);
   text-transform: uppercase;
   width: 50%;
   text-align: center;
+  font-size: 3.25rem;
+  font-weight: 700;
   line-height: 1.95;
   position: absolute;
   bottom: 0;
@@ -560,7 +547,7 @@ body {
 .recipe__title span {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+  background-image: linear-gradient(to bottom right, #fb6ce1, #ffcbdf);
   padding: 1.3rem 2rem;
 }
 
@@ -584,7 +571,7 @@ body {
 .recipe__info-icon {
   height: 2.35rem;
   width: 2.35rem;
-  fill: #f38e82;
+  fill: #d125d7;
   margin-right: 1.15rem;
 }
 
@@ -614,7 +601,7 @@ body {
 .recipe__user-generated svg {
   height: 2.25rem;
   width: 2.25rem;
-  fill: #f38e82;
+  fill: #d125d7;
 }
 
 .recipe__ingredients {
@@ -622,7 +609,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 5rem 8rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 1.4;
   display: flex;
 }
@@ -641,7 +628,7 @@ body {
 .recipe__icon {
   height: 2rem;
   width: 2rem;
-  fill: #f38e82;
+  fill: #d125d7;
   flex: none;
   margin-top: .1rem;
   margin-right: 1.1rem;
@@ -741,12 +728,12 @@ body {
 }
 
 .upload__column input::placeholder {
-  color: #d3c7c3;
+  color: #f22cd4;
 }
 
 .upload__column input:focus {
   background-color: #f9f5f3;
-  border: 1px solid #f38e82;
+  border: 1px solid #d125d7;
   outline: none;
 }
 

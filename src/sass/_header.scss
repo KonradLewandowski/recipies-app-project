@@ -11,13 +11,12 @@
   }
 
   &__logo {
-    // margin-left: 4rem;
     height: 4.6rem;
   }
 }
 
 .search {
-  background-color: rgb(90, 86, 86);
+  background-color: rgb(252, 155, 209);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,14 +42,6 @@
     &::placeholder {
       color: $color-grey-light-3;
     }
-
-    // @media only screen and (max-width: $bp-medium) {
-    //   width: auto;
-
-    //   &::placeholder {
-    //     color: white;
-    //   }
-    // }
   }
 
   &__btn {
@@ -60,8 +51,6 @@
 }
 
 .nav {
-  // align-self: stretch;
-  // justify-self: flex-end;
   margin-right: 2.5rem;
 
   &__list {
@@ -111,7 +100,6 @@
 .bookmarks {
   padding: 1rem 0;
   position: absolute;
-  // right: 0;
   right: -2.5rem;
   z-index: 10;
   width: 40rem;

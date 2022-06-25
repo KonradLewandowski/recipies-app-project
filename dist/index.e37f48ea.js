@@ -558,10 +558,11 @@ const controlRecipes = async ()=>{
         (0, _recipeViewDefault.default).renderSpinner();
         //0 Update results view to mark selected searhc result
         (0, _resultsViewDefault.default).update((0, _model.getSearchResultsPage)());
+        //1 updating bookmarks view
         (0, _bookmarksViewDefault.default).update((0, _model.state).bookmarks);
-        // 1 loading recepi
+        // 2 loading recepi
         await (0, _model.loadRecipe)(id);
-        // 2 rendering recipe
+        // 3 rendering recipe
         (0, _recipeViewDefault.default).render((0, _model.state).recipe);
     } catch (error) {
         (0, _recipeViewDefault.default).renderError();
@@ -606,7 +607,11 @@ const controlAddBookmark = ()=>{
     //3 render bookmarks
     (0, _bookmarksViewDefault.default).render((0, _model.state).bookmarks);
 };
+const controlBookmarks = ()=>{
+    (0, _bookmarksViewDefault.default).render((0, _model.state).bookmarks);
+};
 const init = ()=>{
+    (0, _bookmarksViewDefault.default).addHandlerRender(controlBookmarks);
     (0, _recipeViewDefault.default).addHandlerRender(controlRecipes);
     (0, _recipeViewDefault.default).addHandlerUpdateServings(controlServings);
     (0, _recipeViewDefault.default).addHandlerAddBookmark(controlAddBookmark);
@@ -1922,11 +1927,16 @@ const updateServings = (newServings)=>{
     });
     state.recipe.servings = newServings;
 };
+const persistBookmarks = ()=>{
+    localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+};
 const addBookmark = (recipe)=>{
     //add bookmark
     state.bookmarks.push(recipe);
     //mark current recipe as bookmark
     if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+    //save to local storage
+    persistBookmarks();
 };
 const deleteBookmark = (id)=>{
     //Dleete bookmark
@@ -1934,7 +1944,17 @@ const deleteBookmark = (id)=>{
     state.bookmarks.splice(index, 1);
     //mark current recipe as NOT bookmark
     if (id === state.recipe.id) state.recipe.bookmarked = false;
+    //save to local storage
+    persistBookmarks();
 };
+const init = ()=>{
+    const storage = localStorage.getItem("bookmarks");
+    if (storage) state.bookmarks = JSON.parse(storage);
+};
+init();
+const clearBookmarks = ()=>{
+    localStorage.clear("bookmarks");
+}; // clearBookmarks();
 
 },{"./config":"k5Hzs","./helpers":"hGI1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k5Hzs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -2132,6 +2152,7 @@ var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class View {
     _data;
     render(data, render = true) {
+        if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
         this._data = data;
         const markup = this._generateMarkup();
         if (!render) return markup;
@@ -2139,7 +2160,6 @@ class View {
         this._parentElement.insertAdjacentHTML("afterbegin", markup);
     }
     update(data) {
-        if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
         this._data = data;
         const newMarkup = this._generateMarkup();
         //update DOM elements without updating the whole page (virtual DOM)
@@ -2516,7 +2536,7 @@ var _previewViewDefault = parcelHelpers.interopDefault(_previewView);
 class ResultsView extends (0, _viewDefault.default) {
     _parentElement = document.querySelector(".results");
     _errorMessage = "No recipes found!";
-    _message = "Success";
+    _message = "";
     _generateMarkup() {
         return this._data.map((result)=>(0, _previewViewDefault.default).render(result, false)).join("");
     }
@@ -3176,7 +3196,10 @@ var _previewViewDefault = parcelHelpers.interopDefault(_previewView);
 class BookmarksView extends (0, _viewDefault.default) {
     _parentElement = document.querySelector(".bookmarks__list");
     _errorMessage = "No bookmarks added!";
-    _message = "Success";
+    _message = "";
+    addHandlerRender(handler) {
+        window.addEventListener("load", handler);
+    }
     _generateMarkup() {
         return this._data.map((bookmark)=>(0, _previewViewDefault.default).render(bookmark, false)).join("");
     }

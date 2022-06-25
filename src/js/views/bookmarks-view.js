@@ -4,7 +4,11 @@ import PreviewView from './preview-view';
 class BookmarksView extends View {
   _parentElement = document.querySelector('.bookmarks__list');
   _errorMessage = 'No bookmarks added!';
-  _message = 'Success';
+  _message = '';
+
+  addHandlerRender(handler) {
+    window.addEventListener('load', handler);
+  }
 
   _generateMarkup() {
     return this._data

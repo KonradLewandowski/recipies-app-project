@@ -1,10 +1,10 @@
 // $color-primary: #f59a83;
-$color-primary: #ff3eff;
+$color-primary: #ff00ff;
 $color-grad-1: #ff72e3;
-$color-grad-2: #ffcbdf;
+$color-grad-2: #fee0ec;
 
-$color-grey-light-1: #f8f3f9; // Light background
-$color-grey-light-2: #f2efee; // Light lines
+$color-grey-light-1: #f6efef; // Light background
+$color-grey-light-2: #ffecfd; // Light lines
 $color-grey-light-3: #ff58e6; // Light text (placeholder)
 $color-grey-dark-1: #615551; // Normal text
 $color-grey-dark-2: #918581; // Lighter text
@@ -39,7 +39,9 @@ body {
 }
 
 .container {
-  max-width: 1440px;
+  box-sizing: border-box;
+  // max-width: 66vw;
+
   margin: 0 auto;
   padding: 10px 10px 0 10px;
   background-color: #fff;

@@ -4,15 +4,19 @@ import {
   loadSearchResults,
   getSearchResultsPage,
   updateServings,
+  addBookmark,
+  deleteBookmark,
 } from './model';
 import RecipeView from './views/recipe-view';
 import SearchView from './views/search-view';
 import ResultsView from './views/results-view';
 import PaginationView from './views/pagination-view';
+import bookmarksView from './views/bookmarks-view';
 
 import 'core-js/stable'; //polyfil everything
 import 'regenerator-runtime/runtime'; //polyfil async await
 import resultsView from './views/results-view';
+import recipeView from './views/recipe-view';
 
 //parcel module reload
 // if (module.hot) {
@@ -29,6 +33,7 @@ const controlRecipes = async () => {
 
     //0 Update results view to mark selected searhc result
     resultsView.update(getSearchResultsPage());
+    bookmarksView.update(state.bookmarks);
 
     // 1 loading recepi
     await loadRecipe(id);
@@ -78,9 +83,22 @@ const controlServings = newServings => {
   RecipeView.update(state.recipe);
 };
 
+const controlAddBookmark = () => {
+  //1 add or remove bookmark
+  if (!state.recipe.bookmarked) addBookmark(state.recipe);
+  else deleteBookmark(state.recipe.id);
+
+  //2 update recipe viuew
+  recipeView.update(state.recipe);
+
+  //3 render bookmarks
+  bookmarksView.render(state.bookmarks);
+};
+
 const init = () => {
   RecipeView.addHandlerRender(controlRecipes);
   RecipeView.addHandlerUpdateServings(controlServings);
+  RecipeView.addHandlerAddBookmark(controlAddBookmark);
   SearchView.addHandlerSearch(controlSearchResults);
   PaginationView.addHandlerClick(controlPagination);
 };

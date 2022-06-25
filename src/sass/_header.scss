@@ -2,12 +2,13 @@
   grid-area: head;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     gap: 20px;
+    justify-content: center;
   }
 
   &__logo {
@@ -16,7 +17,8 @@
 }
 
 .search {
-  background-color: rgb(252, 155, 209);
+  min-width: 33%;
+  background-color: rgb(255, 225, 241);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +36,6 @@
     font-family: inherit;
     color: inherit;
     font-size: 1.7rem;
-    width: 30rem;
 
     &:focus {
       outline: none;

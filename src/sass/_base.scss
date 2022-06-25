@@ -1,11 +1,11 @@
 // $color-primary: #f59a83;
-$color-primary: #d125d7;
-$color-grad-1: #fb6ce1;
+$color-primary: #ff3eff;
+$color-grad-1: #ff72e3;
 $color-grad-2: #ffcbdf;
 
-$color-grey-light-1: #f9f5f3; // Light background
+$color-grey-light-1: #f8f3f9; // Light background
 $color-grey-light-2: #f2efee; // Light lines
-$color-grey-light-3: #f22cd4; // Light text (placeholder)
+$color-grey-light-3: #ff58e6; // Light text (placeholder)
 $color-grey-dark-1: #615551; // Normal text
 $color-grey-dark-2: #918581; // Lighter text
 
@@ -23,7 +23,7 @@ $bp-smallest: 31.25em; // 500px
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 50%;
 
   @media only screen and (max-width: $bp-medium) {
     font-size: 40%;
@@ -36,13 +36,12 @@ body {
   line-height: 1.6;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 2 * 4vw);
 }
 
 .container {
+  max-width: 1440px;
   margin: 0 auto;
   padding: 10px 10px 0 10px;
-  max-width: 1440px;
   background-color: #fff;
   overflow: hidden;
 
@@ -51,10 +50,11 @@ body {
   }
 
   &_main {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-
     padding-top: 20px;
+
     @media only screen and (max-width: $bp-smallest) {
       flex-wrap: wrap-reverse;
     }

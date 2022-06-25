@@ -5,7 +5,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 50%;
 }
 
 @media only screen and (max-width: 61.25em) {
@@ -20,13 +20,12 @@ body {
   line-height: 1.6;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 2 * 4vw);
 }
 
 .container {
+  max-width: 1440px;
   margin: 0 auto;
   padding: 10px 10px 0 10px;
-  max-width: 1440px;
   background-color: #fff;
   overflow: hidden;
 }
@@ -38,6 +37,7 @@ body {
 }
 
 .container_main {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   padding-top: 20px;

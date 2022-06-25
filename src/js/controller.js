@@ -3,6 +3,7 @@ import {
   loadRecipe,
   loadSearchResults,
   getSearchResultsPage,
+  updateServings,
 } from './model';
 import RecipeView from './views/recipe-view';
 import SearchView from './views/search-view';
@@ -11,6 +12,7 @@ import PaginationView from './views/pagination-view';
 
 import 'core-js/stable'; //polyfil everything
 import 'regenerator-runtime/runtime'; //polyfil async await
+import resultsView from './views/results-view';
 
 //parcel module reload
 // if (module.hot) {
@@ -24,6 +26,9 @@ const controlRecipes = async () => {
     if (!id) return;
 
     RecipeView.renderSpinner();
+
+    //0 Update results view to mark selected searhc result
+    resultsView.update(getSearchResultsPage());
 
     // 1 loading recepi
     await loadRecipe(id);
@@ -63,8 +68,19 @@ const controlPagination = goToPage => {
   PaginationView.render(state.search);
 };
 
+const controlServings = newServings => {
+  //Update the recipe servings (in state)
+  updateServings(newServings);
+
+  //Update the recipe view
+  // rendering recipe
+  // RecipeView.render(state.recipe);
+  RecipeView.update(state.recipe);
+};
+
 const init = () => {
   RecipeView.addHandlerRender(controlRecipes);
+  RecipeView.addHandlerUpdateServings(controlServings);
   SearchView.addHandlerSearch(controlSearchResults);
   PaginationView.addHandlerClick(controlPagination);
 };

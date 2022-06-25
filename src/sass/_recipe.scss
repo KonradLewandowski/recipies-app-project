@@ -1,13 +1,16 @@
 .recipe {
+  min-width: 66%;
   background-color: $color-grey-light-1;
+
+  // @media only screen and (max-width: $bp-medium) {
+  //   min-width: 250px !important;
+  // }
 
   ///////////
   // FIGURE
   &__fig {
     height: 32rem;
     position: relative;
-    // transform: scale(1.04) translateY(-1px);
-    transform-origin: top;
 
     &::before {
       content: '';
@@ -34,7 +37,7 @@
     color: #fff;
     font-weight: 700;
     // font-size: 3.25rem;
-    font-size: clamp(3rem, 3.25rem, 3.5rem);
+    font-size: clamp(2.5rem, 2.75rem, 3rem);
     text-transform: uppercase;
     width: 50%;
     line-height: 1.95;
@@ -56,9 +59,15 @@
   // DETAILS
   &__details {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    padding: 7.5rem 8rem 3.5rem 8rem;
+    justify-content: space-between;
+
+    padding: 7.5rem 4rem 3.5rem 4rem;
+
+    @media only screen and (max-width: 637.8px) {
+      justify-content: center;
+      gap: 10px;
+    }
   }
 
   &__info {
@@ -86,7 +95,8 @@
 
   &__info-buttons {
     display: flex;
-    margin-left: 1.6rem;
+    gap: 10px;
+    margin-left: 10px;
     transform: translateY(-1px);
   }
 
@@ -99,8 +109,6 @@
     height: 4rem;
     width: 4rem;
     border-radius: 10rem;
-
-    margin-left: auto;
     margin-right: 1.75rem;
 
     svg {
@@ -113,7 +121,7 @@
   ///////////
   // INGREDIENTS
   &__ingredients {
-    padding: 5rem 8rem;
+    padding: 4rem 4rem;
     font-size: clamp(1.5rem, 2rem, 2.5rem);
     line-height: 1.4;
     background-color: $color-grey-light-2;

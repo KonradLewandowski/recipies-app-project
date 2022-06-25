@@ -11,10 +11,10 @@ $color-grey-dark-2: #918581; // Lighter text
 
 $gradient: linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
 
-$bp-large: 78.15em; // 1250px
-$bp-medium: 61.25em; // 980px
-$bp-small: 37.5em; // 600px
-$bp-smallest: 31.25em; // 500px
+$bp-large: 1250px; // 1250px
+$bp-medium: 980px; // 980px
+$bp-small: 620px; // 650px
+$bp-smallest: 500px; // 500px
 
 * {
   margin: 0;
@@ -40,14 +40,14 @@ body {
 
 .container {
   box-sizing: border-box;
-  // max-width: 66vw;
+  max-width: 66vw;
 
   margin: 0 auto;
   padding: 10px 10px 0 10px;
   background-color: #fff;
   overflow: hidden;
 
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: $bp-medium) {
     max-width: 100%;
   }
 
@@ -57,7 +57,7 @@ body {
     justify-content: center;
     padding-top: 20px;
 
-    @media only screen and (max-width: $bp-smallest) {
+    @media only screen and (max-width: $bp-small) {
       flex-wrap: wrap-reverse;
     }
   }

@@ -8,7 +8,7 @@ html {
   font-size: 50%;
 }
 
-@media only screen and (max-width: 61.25em) {
+@media only screen and (max-width: 980px) {
   html {
     font-size: 40%;
   }
@@ -24,13 +24,14 @@ body {
 
 .container {
   box-sizing: border-box;
+  max-width: 66vw;
   margin: 0 auto;
   padding: 10px 10px 0 10px;
   background-color: #fff;
   overflow: hidden;
 }
 
-@media only screen and (max-width: 78.15em) {
+@media only screen and (max-width: 980px) {
   .container {
     max-width: 100%;
   }
@@ -43,7 +44,7 @@ body {
   padding-top: 20px;
 }
 
-@media only screen and (max-width: 31.25em) {
+@media only screen and (max-width: 620px) {
   .container_main {
     flex-wrap: wrap-reverse;
   }

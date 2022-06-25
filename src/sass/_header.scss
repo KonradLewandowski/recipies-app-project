@@ -17,14 +17,14 @@
 }
 
 .search {
-  min-width: 33%;
+  min-width: 320px;
   background-color: rgb(255, 225, 241);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 3rem;
   transition: all 0.3s;
-  color: white;
+  color: rgb(255, 0, 191);
 
   &:focus-within {
     transform: translateY(-2px);
@@ -35,7 +35,7 @@
     background: none;
     font-family: inherit;
     color: inherit;
-    font-size: 1.7rem;
+    font-size: 2rem;
 
     &:focus {
       outline: none;

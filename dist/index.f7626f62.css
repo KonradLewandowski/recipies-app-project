@@ -266,8 +266,8 @@ body {
 }
 
 .search {
-  min-width: 33%;
-  color: #fff;
+  min-width: 320px;
+  color: #ff00bf;
   background-color: #ffe1f1;
   justify-content: space-between;
   align-items: center;
@@ -285,7 +285,7 @@ body {
   background: none;
   border: none;
   font-family: inherit;
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 
 .search__field:focus {

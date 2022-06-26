@@ -103,6 +103,9 @@ const controlBookmarks = () => {
 
 const controlAddRecipe = async newRecipe => {
   try {
+    //show overlay
+    AddrecipeView.toggleHint();
+
     //show loading spinner
     AddrecipeView.renderSpinner();
 
@@ -130,6 +133,12 @@ const controlAddRecipe = async newRecipe => {
     }, MODAL_CLOSE_SEC * 1000);
   } catch (error) {
     AddrecipeView.renderError(error.message);
+    setTimeout(() => {
+      AddrecipeView.toggleHint();
+
+      //creat correnc _parentElement
+      AddrecipeView.triggerParentElement();
+    }, MODAL_CLOSE_SEC * 3000);
   }
 };
 

@@ -615,6 +615,8 @@ const controlBookmarks = ()=>{
 };
 const controlAddRecipe = async (newRecipe)=>{
     try {
+        //show overlay
+        (0, _addrecipeViewDefault.default).toggleHint();
         //show loading spinner
         (0, _addrecipeViewDefault.default).renderSpinner();
         //upload the new recipe data
@@ -635,6 +637,11 @@ const controlAddRecipe = async (newRecipe)=>{
         }, (0, _config.MODAL_CLOSE_SEC) * 1000);
     } catch (error) {
         (0, _addrecipeViewDefault.default).renderError(error.message);
+        setTimeout(()=>{
+            (0, _addrecipeViewDefault.default).toggleHint();
+            //creat correnc _parentElement
+            (0, _addrecipeViewDefault.default).triggerParentElement();
+        }, (0, _config.MODAL_CLOSE_SEC) * 3000);
     }
 };
 const init = ()=>{
@@ -2259,6 +2266,7 @@ class View {
         this._parentElement.innerHTML = "";
     }
     renderSpinner() {
+        console.log(this._parentElement);
         const markup = `<div class="spinner">
                 <svg>
                   <use href="${(0, _iconsSvgDefault.default)}#icon-loader"></use>
@@ -2731,6 +2739,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _view = require("./view");
 var _viewDefault = parcelHelpers.interopDefault(_view);
+var _iconsSvg = require("url:../../img/icons.svg"); //Parcel icons
+var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class AddRecipeView extends (0, _viewDefault.default) {
     _parentElement = document.querySelector(".upload");
     _message = "Recipe added";
@@ -2738,6 +2748,7 @@ class AddRecipeView extends (0, _viewDefault.default) {
     _overlay = document.querySelector(".overlay");
     _buttonOpen = document.querySelector(".nav__btn--add-recipe");
     _buttonClose = document.querySelector(".btn--close-modal");
+    _hintContainer = document.querySelector(".hint-container");
     constructor(){
         super();
         this._addHandlerShowModal();
@@ -2746,6 +2757,10 @@ class AddRecipeView extends (0, _viewDefault.default) {
     toggleModal() {
         this._overlay.classList.toggle("hidden");
         this._window.classList.toggle("hidden");
+    }
+    toggleHint() {
+        this._parentElement = this._hintContainer;
+        this._hintContainer.classList.toggle("hidden");
     }
     _addHandlerShowModal() {
         this._buttonOpen.addEventListener("click", this.toggleModal.bind(this));
@@ -2757,6 +2772,7 @@ class AddRecipeView extends (0, _viewDefault.default) {
     addHandlerUpload(handler) {
         this._parentElement.addEventListener("submit", (e)=>{
             e.preventDefault();
+            console.log(this._parentElement);
             //this method takes all imputs from the form and creating human friendly array and object, which we can manipulate
             const dataArray = [
                 ...new FormData(this._parentElement)
@@ -2765,11 +2781,13 @@ class AddRecipeView extends (0, _viewDefault.default) {
             handler(data);
         });
     }
-    _generateMarkup() {}
+    triggerParentElement() {
+        this._parentElement = document.querySelector(".upload");
+    }
 }
 exports.default = new AddRecipeView();
 
-},{"./view":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXNgZ":[function(require,module,exports) {
+},{"./view":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp"}],"dXNgZ":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *

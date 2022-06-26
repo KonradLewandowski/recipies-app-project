@@ -1,4 +1,5 @@
 import View from './view';
+import icons from 'url:../../img/icons.svg'; //Parcel icons
 
 class AddRecipeView extends View {
   _parentElement = document.querySelector('.upload');
@@ -7,6 +8,7 @@ class AddRecipeView extends View {
   _overlay = document.querySelector('.overlay');
   _buttonOpen = document.querySelector('.nav__btn--add-recipe');
   _buttonClose = document.querySelector('.btn--close-modal');
+  _hintContainer = document.querySelector('.hint-container');
 
   constructor() {
     super();
@@ -17,6 +19,11 @@ class AddRecipeView extends View {
   toggleModal() {
     this._overlay.classList.toggle('hidden');
     this._window.classList.toggle('hidden');
+  }
+
+  toggleHint() {
+    this._parentElement = this._hintContainer;
+    this._hintContainer.classList.toggle('hidden');
   }
 
   _addHandlerShowModal() {
@@ -31,6 +38,7 @@ class AddRecipeView extends View {
   addHandlerUpload(handler) {
     this._parentElement.addEventListener('submit', e => {
       e.preventDefault();
+      console.log(this._parentElement);
 
       //this method takes all imputs from the form and creating human friendly array and object, which we can manipulate
       const dataArray = [...new FormData(this._parentElement)]; // all fields from the form
@@ -38,8 +46,9 @@ class AddRecipeView extends View {
       handler(data);
     });
   }
-
-  _generateMarkup() {}
+  triggerParentElement() {
+    this._parentElement = document.querySelector('.upload');
+  }
 }
 
 export default new AddRecipeView();

@@ -1,0 +1,16 @@
+footer {
+  padding: 0 3rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .about {
+    padding: 1rem;
+    a {
+      font-size: 2rem;
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+}

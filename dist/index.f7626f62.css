@@ -804,4 +804,34 @@ body {
   justify-self: center;
 }
 
+footer {
+  max-width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 3rem;
+  display: flex;
+}
+
+footer .about {
+  padding: 1rem;
+}
+
+footer .about a {
+  color: #f0f;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.hint-container {
+  width: 100%;
+  height: 100%;
+  background-color: #ece9e9bf;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /*# sourceMappingURL=index.f7626f62.css.map */

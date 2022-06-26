@@ -53,6 +53,8 @@ export default class View {
   }
 
   renderSpinner() {
+    console.log(this._parentElement);
+
     const markup = `<div class="spinner">
                 <svg>
                   <use href="${icons}#icon-loader"></use>

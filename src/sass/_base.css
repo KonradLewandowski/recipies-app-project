@@ -42,6 +42,7 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  min-height: 66vh;
 }
 
 @media only screen and (max-width: 620px) {

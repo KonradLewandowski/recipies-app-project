@@ -57,6 +57,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    min-height: 66vh;
 
     @media only screen and (max-width: $bp-small) {
       flex-wrap: wrap-reverse;

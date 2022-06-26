@@ -5,12 +5,14 @@
   transform: translate(-50%, -50%);
   width: 100rem;
   background-color: white;
-  border-radius: 9px;
 
   padding: 5rem 6rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
   z-index: 1000;
-  transition: all 0.5s;
+
+  @media only screen and (max-width: 725px) {
+    max-width: 90vw;
+  }
 
   .btn--close-modal {
     font-family: inherit;
@@ -47,6 +49,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem 6rem;
 
+  @media only screen and (max-width: 725px) {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem 3rem;
+  }
   &__column {
     display: grid;
     grid-template-columns: 1fr 2.8fr;
@@ -63,7 +70,6 @@
       font-size: 1.5rem;
       padding: 0.8rem 1rem;
       border: 1px solid #ddd;
-      border-radius: 0.5rem;
       transition: all 0.2s;
 
       &::placeholder {
@@ -95,5 +101,6 @@
   &__btn {
     grid-column: 1 / -1;
     justify-self: center;
+    max-height: 34px;
   }
 }

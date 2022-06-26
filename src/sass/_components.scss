@@ -1,5 +1,5 @@
 %btn {
-  background-image: $gradient;
+  background-color: $gradient;
   border: none;
   text-transform: uppercase;
   color: #fff;
@@ -90,7 +90,7 @@
 }
 
 .btn--round {
-  background-image: $gradient;
+  background-color: $gradient;
   border-radius: 50%;
   border: none;
   cursor: pointer;

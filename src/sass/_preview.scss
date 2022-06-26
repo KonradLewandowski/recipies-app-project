@@ -10,12 +10,12 @@
     }
 
     &:hover {
-      background-color: white;
+      background-color: $color-grad-2;
       transform: translateY(-2px);
     }
 
     &--active {
-      background-color: white;
+      background-color: $color-grad-2;
       border-right: 10px solid $color-grad-1;
     }
   }

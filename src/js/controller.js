@@ -6,12 +6,15 @@ import {
   updateServings,
   addBookmark,
   deleteBookmark,
+  uploadRecipe,
 } from './model';
+import { MODAL_CLOSE_SEC } from './config';
 import RecipeView from './views/recipe-view';
 import SearchView from './views/search-view';
 import ResultsView from './views/results-view';
 import PaginationView from './views/pagination-view';
 import BookmarksView from './views/bookmarks-view';
+import AddrecipeView from './views/addrecipe-view';
 
 import 'core-js/stable'; //polyfil everything
 import 'regenerator-runtime/runtime'; //polyfil async await
@@ -98,6 +101,38 @@ const controlBookmarks = () => {
   BookmarksView.render(state.bookmarks);
 };
 
+const controlAddRecipe = async newRecipe => {
+  try {
+    //show loading spinner
+    AddrecipeView.renderSpinner();
+
+    //upload the new recipe data
+    await uploadRecipe(newRecipe);
+
+    //render recipe
+    RecipeView.render(state.recipe);
+
+    //success message
+    AddrecipeView.renderMessage();
+
+    //render bookmark vier
+    BookmarksView.render(state.bookmarks);
+
+    //change id in the url
+    //method adding new url without reloaded the whole page
+    const urlID = state.recipe.id;
+
+    window.history.pushState(null, '', `#${urlID}`);
+
+    //close modal
+    setTimeout(() => {
+      AddrecipeView.toggleModal();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (error) {
+    AddrecipeView.renderError(error.message);
+  }
+};
+
 const init = () => {
   BookmarksView.addHandlerRender(controlBookmarks);
   RecipeView.addHandlerRender(controlRecipes);
@@ -105,5 +140,6 @@ const init = () => {
   RecipeView.addHandlerAddBookmark(controlAddBookmark);
   SearchView.addHandlerSearch(controlSearchResults);
   PaginationView.addHandlerClick(controlPagination);
+  AddrecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();

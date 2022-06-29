@@ -15,6 +15,7 @@ import ResultsView from './views/results-view';
 import PaginationView from './views/pagination-view';
 import BookmarksView from './views/bookmarks-view';
 import AddrecipeView from './views/addrecipe-view';
+import AboutProjectView from './views/about-view';
 
 import 'core-js/stable'; //polyfil everything
 import 'regenerator-runtime/runtime'; //polyfil async await

@@ -20,10 +20,10 @@ $bp-smallest: 500px; // 500px
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  box-sizing: border-box;
   font-size: 50%;
 
   @media only screen and (max-width: $bp-medium) {
@@ -40,7 +40,7 @@ body {
 }
 
 .container {
-  box-sizing: border-box;
+  // box-sizing: border-box;
   max-width: 66vw;
 
   margin: 0 auto;

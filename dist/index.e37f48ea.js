@@ -549,6 +549,8 @@ var _bookmarksView = require("./views/bookmarks-view");
 var _bookmarksViewDefault = parcelHelpers.interopDefault(_bookmarksView);
 var _addrecipeView = require("./views/addrecipe-view");
 var _addrecipeViewDefault = parcelHelpers.interopDefault(_addrecipeView);
+var _aboutView = require("./views/about-view");
+var _aboutViewDefault = parcelHelpers.interopDefault(_aboutView);
 var _runtime = require("regenerator-runtime/runtime"); //polyfil async await
 //parcel module reload
 // if (module.hot) {
@@ -655,7 +657,7 @@ const init = ()=>{
 };
 init();
 
-},{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","./model":"Y4A21","./views/recipe-view":"zwYGv","./views/search-view":"8rwUX","./views/results-view":"lHBod","./views/pagination-view":"2cvaA","./views/bookmarks-view":"awHl2","./views/addrecipe-view":"eV1eO","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./config":"k5Hzs"}],"dkJzX":[function(require,module,exports) {
+},{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","./model":"Y4A21","./config":"k5Hzs","./views/recipe-view":"zwYGv","./views/search-view":"8rwUX","./views/results-view":"lHBod","./views/pagination-view":"2cvaA","./views/bookmarks-view":"awHl2","./views/addrecipe-view":"eV1eO","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./views/about-view":"ioivi"}],"dkJzX":[function(require,module,exports) {
 "use strict";
 var $ = require("../internals/export");
 var $includes = require("../internals/array-includes").includes;
@@ -2664,7 +2666,7 @@ class PreviewView extends (0, _viewDefault.default) {
 }
 exports.default = new PreviewView();
 
-},{"./view":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp"}],"2cvaA":[function(require,module,exports) {
+},{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2cvaA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _view = require("./view");
@@ -2787,7 +2789,7 @@ class AddRecipeView extends (0, _viewDefault.default) {
 }
 exports.default = new AddRecipeView();
 
-},{"./view":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp"}],"dXNgZ":[function(require,module,exports) {
+},{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXNgZ":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -3354,6 +3356,33 @@ try {
     else Function("r", "regeneratorRuntime = r")(runtime);
 }
 
-},{}]},["fA0o9","aenu9"], "aenu9", "parcelRequirecb59")
+},{}],"ioivi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _view = require("./view");
+var _viewDefault = parcelHelpers.interopDefault(_view);
+var _iconsSvg = require("url:../../img/icons.svg"); //Parcel icons
+var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
+class AboutProjectView extends (0, _viewDefault.default) {
+    _aboutProjectLink = document.querySelector("#about-project");
+    _aboutProjectWindow = document.querySelector(".about-project");
+    constructor(){
+        super();
+        this._addHandlerShowAbout();
+        this._addHandlerCloseAbout();
+    }
+    toggleAbout() {
+        this._aboutProjectWindow.classList.toggle("hidden");
+    }
+    _addHandlerShowAbout() {
+        this._aboutProjectLink.addEventListener("click", this.toggleAbout.bind(this));
+    }
+    _addHandlerCloseAbout() {
+        this._aboutProjectWindow.addEventListener("click", this.toggleAbout.bind(this));
+    }
+}
+exports.default = new AboutProjectView();
+
+},{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fA0o9","aenu9"], "aenu9", "parcelRequirecb59")
 
 //# sourceMappingURL=index.e37f48ea.js.map

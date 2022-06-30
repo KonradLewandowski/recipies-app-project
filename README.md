@@ -1,5 +1,6 @@
-YouTube link: https://youtu.be/QipPqK00w-4
-link to the app: https://recipies-app-kl.netlify.app
+| YouTube link: https://youtu.be/QipPqK00w-4 
+
+| link to the app: https://recipies-app-kl.netlify.app
 
 #Recipes App
 

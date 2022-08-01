@@ -1,10 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-| YouTube link: https://youtu.be/QipPqK00w-4 
-
-| link to the app: https://recipies-app-kl.netlify.app
->>>>>>> 6615bb1152207b73b256d40426e03661bdec0241
 
 ## Recipes App
 

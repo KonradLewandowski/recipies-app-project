@@ -11,7 +11,6 @@ I kindly ask you to try out the functionalities of the application:
 - Sent recipies are automatically assigned to the user
 
 - Adding/deleting recipied from bookmarks (local storage)
--
 
 ## Available Scripts
 

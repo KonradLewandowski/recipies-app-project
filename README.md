@@ -1,10 +1,14 @@
-link: https://recipies-app-kl.netlify.app
+<<<<<<< HEAD
 
-#Recipes App
+## Recipes App
 
-The application was developed using HTML, CSS, JavaScript and also preprocessor SASS. Compiled using Parcel.
+=======
 
-Its main functionalities are:
+# Getting Started with Recipes App
+
+The application was developed using 💥HTML, 💥CSS, 💥JavaScript and also preprocessor 💥SASS. Compiled using 💥Parcel.
+
+I kindly ask you to try out the functionalities of the application:
 
 - Downloading data from the server (a list of recipies) and displaying them in the front-end layer
 
@@ -13,3 +17,24 @@ Its main functionalities are:
 - Sent recipies are automatically assigned to the user
 
 - Adding/deleting recipied from bookmarks (local storage)
+-
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm install`
+
+Install all dependencies and packages.
+
+### `npm start`
+
+Launches the app. Server running at ([http://localhost:1234](http://localhost:1234)).
+
+## Live version
+
+You can try live version on the server ([https://recipies-app-kl.netlify.app](https://recipies-app-kl.netlify.app)).
+
+## YouTube short
+
+A short video shows how it works ([https://youtu.be/QipPqK00w-4](https://youtu.be/QipPqK00w-4)).

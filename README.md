@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-## Recipes App
-
-=======
-
 # Getting Started with Recipes App
 
 The application was developed using 💥HTML, 💥CSS, 💥JavaScript and also preprocessor 💥SASS. Compiled using 💥Parcel.
